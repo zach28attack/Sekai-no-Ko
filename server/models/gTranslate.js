@@ -1,7 +1,6 @@
 const {Translate} = require("@google-cloud/translate").v2;
 const projectId = "perceptive-seat-399517";
 const translate = new Translate({projectId});
-const API_KEY = "AIzaSyA-JiE1zSDp8JBJkAV1A2BarTz6cmuoRfE";
 
 class Google {
   constructor(text) {
