@@ -1,9 +1,13 @@
 import Class from "./HomePage.module.css";
 import {useState} from "react";
+import Article from "../components/Article";
 
 function HomePage() {
   const [result, setResult] = useState("");
   const [text, setText] = useState("");
+  const [articles, setArticles] = useState([]);
+  const notAKeyPushedToGithub = "4d251c9cc0fb40a0b202812f573fb7e0"; // a harmless key for newsapi.com so i'm not worrying about protecting it
+
   const submitHandler = async (e) => {
     setResult("Pending...");
     e.preventDefault();
@@ -18,6 +22,19 @@ function HomePage() {
       }
     } catch (error) {
       console.error(error);
+    }
+  };
+  const fetchHandler = async () => {
+    const res = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${notAKeyPushedToGithub}&pageSize=100`,
+      {
+        method: "GET",
+      }
+    );
+    if (res.ok) {
+      const data = await res.json();
+      console.log(data.articles);
+      setArticles([...data.articles]);
     }
   };
   const inputHandler = (e) => {
@@ -36,6 +53,11 @@ function HomePage() {
         <h1>Result</h1>
         <section>{result}</section>
       </div>
+      <button onClick={fetchHandler}>Get Articles</button>
+
+      {articles.map((data) => (
+        <Article data={data} key={data.url} />
+      ))}
     </div>
   );
 }
