@@ -1,12 +1,8 @@
 import Class from "./HomePage.module.css";
 import {useState} from "react";
 import Article from "../components/Article";
-import JapaneseParser from "../../JapaneseParser";
 
 function HomePage() {
-  // REMOVE AFTER TEST
-  JapaneseParser();
-
   const [result, setResult] = useState("");
   const [text, setText] = useState("");
   const [articles, setArticles] = useState([]);
@@ -37,10 +33,10 @@ function HomePage() {
     );
     if (res.ok) {
       const data = await res.json();
-      console.log(data.articles);
       setArticles([...data.articles]);
     }
   };
+
   const inputHandler = (e) => {
     setText(e.target.value);
   };

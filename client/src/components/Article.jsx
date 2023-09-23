@@ -1,6 +1,8 @@
 import Class from "./Article.module.css";
+import JapaneseParser from "../../JapaneseParser";
 
 function Article({data}) {
+  const title = JapaneseParser(data.title);
   return (
     <div className={Class.container}>
       <img src={data.urlToImage ? data.urlToImage : ""} alt="Article Picture" />
