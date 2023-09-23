@@ -8,6 +8,7 @@ function Article({data}) {
       <sub>{data.author ? data.author : ""}</sub>
       <p>{data.description ? data.description : ""}</p>
       <p>{data.content ? data.content : ""}</p>
+      <a href={data.url}>link to article</a>
     </div>
   );
 }
