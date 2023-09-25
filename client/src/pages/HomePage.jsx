@@ -1,6 +1,6 @@
 import Class from "./HomePage.module.css";
 import {useState} from "react";
-import Article from "../components/Article";
+import Article from "../components/articles/Article";
 
 function HomePage() {
   const [result, setResult] = useState("");
