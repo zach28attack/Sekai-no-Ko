@@ -5,10 +5,7 @@
   flex-direction: column;
   align-items: center;
 }
-.container form {
-  display: flex;
-  gap: 1rem;
-}
-.container form input {
+
+.container button {
   font-size: 2rem;
 }
