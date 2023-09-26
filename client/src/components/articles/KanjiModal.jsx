@@ -33,7 +33,7 @@ function KanjiModal({kanji}) {
       <ul>
         {constituants.map((kanji) => {
           return (
-            <li>
+            <li key={kanji}>
               {kanji} - {meanings[kanji] || "Loading..."}
             </li>
           );
