@@ -1,0 +1,5 @@
+fff - white
+04a38e - blue
+d9c173 - dark muted gold
+e9d693 - medium muted gold
+f9ebb3 - light muted gold
