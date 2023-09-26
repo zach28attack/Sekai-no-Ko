@@ -1,6 +1,7 @@
 import Class from "./HomePage.module.css";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Article from "../components/articles/Article";
+import Navbar from "../components/shared/Navbar";
 
 function HomePage() {
   const [articles, setArticles] = useState([]);
@@ -22,11 +23,13 @@ function HomePage() {
   const inputHandler = (e) => {
     setText(e.target.value);
   };
+  useEffect(() => {
+    fetchArticles();
+  }, []);
 
   return (
     <div className={Class.container}>
-      <button onClick={fetchArticles}>Get Articles</button>
-
+      <Navbar />
       {articles.map((data, index) => (
         <Article key={index} data={data} />
       ))}
