@@ -6,9 +6,45 @@
 }
 .container {
   position: absolute;
-  width: 450px;
+  min-width: 400px;
   background-color: white;
   color: black;
-  border: black solid 1px;
+  border: #d9c173 solid 2px;
+  border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.translation {
+  font-size: 1.4rem;
+  align-self: flex-start;
+  padding-left: 48px;
+}
+.content ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  background-color: #04a38e;
+  border-radius: 10px;
+  color: #f9ebb3;
+}
+.header {
+  display: flex;
+  border-bottom: #04a38e solid 1px;
+  padding: 0 10px;
+}
+.kanji {
+  font-size: 2rem;
+}
+.hiragana {
+  font-size: 1.5rem;
+  align-self: center;
+  padding-left: 16px;
 }

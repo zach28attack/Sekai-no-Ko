@@ -32,18 +32,22 @@ function KanjiModal({kanji, setModalActive, mouseX, mouseY}) {
   return (
     <div className={Class.backdrop} id="backdrop" onClick={closeHandler}>
       <div className={Class.container} style={{left: mouseX, top: mouseY}}>
-        <div>
-          {kanji} - {translation || "loading..."}
+        <header className={Class.header}>
+          <span className={Class.kanji}>{kanji}</span>
+          <span className={Class.hiragana}>ひらがな</span>
+        </header>
+        <div className={Class.content}>
+          <div className={Class.translation}>- {translation || "loading..."}</div>
+          <ul>
+            {constituants.map((kanji) => {
+              return (
+                <li key={kanji}>
+                  {kanji} - {meanings[kanji] || "Loading..."}
+                </li>
+              );
+            })}
+          </ul>
         </div>
-        <ul>
-          {constituants.map((kanji) => {
-            return (
-              <li key={kanji}>
-                {kanji} - {meanings[kanji] || "Loading..."}
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </div>
   );
