@@ -40,12 +40,15 @@ function Article({data}) {
 
   return (
     <div className={Class.container}>
-      <img src={data.urlToImage ? data.urlToImage : ""} alt="Article Picture" />
-      <h1>{title}</h1>
-      <br />
-      <sub>{author}</sub>
-      <p>{description}</p>
-      <a href={data.url}>link to article</a>
+      <header className={Class.title}>{title}</header>
+      <div className={Class.content}>
+        <img src={data.urlToImage ? data.urlToImage : ""} alt="Article Picture" />
+        <div>
+          <sub>{author}</sub>
+          <p>{description}</p>
+          <a href={data.url}>link to article</a>
+        </div>
+      </div>
     </div>
   );
 }
