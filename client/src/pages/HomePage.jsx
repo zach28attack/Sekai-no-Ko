@@ -28,7 +28,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div className={Class.container}>
+    <div className={Class.container} id="modalTarget">
       <Navbar />
       {articles.map((data, index) => (
         <Article key={index} data={data} />

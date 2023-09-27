@@ -3,7 +3,7 @@ import gTranslate from "../../modules/GoogleTranslate";
 import kanjiSearch from "../../modules/KanjiSearch";
 import {useEffect, useState} from "react";
 
-function KanjiModal({kanji}) {
+function KanjiModal({kanji, setModalActive, mouseX, mouseY}) {
   const [meanings, setMeanings] = useState({});
   const [translation, setTranslation] = useState("");
 
@@ -20,25 +20,31 @@ function KanjiModal({kanji}) {
     setTranslation(translatedKanji);
   };
 
+  const closeHandler = (e) => {
+    if (e.target.id === "backdrop") setModalActive(false);
+  };
+
   useEffect(() => {
     getMeaningsOfConstituants();
     getTranslation();
   }, []);
 
   return (
-    <div className={Class.container}>
-      <div>
-        {kanji} - {translation || "loading..."}
+    <div className={Class.backdrop} id="backdrop" onClick={closeHandler}>
+      <div className={Class.container} style={{left: mouseX, top: mouseY}}>
+        <div>
+          {kanji} - {translation || "loading..."}
+        </div>
+        <ul>
+          {constituants.map((kanji) => {
+            return (
+              <li key={kanji}>
+                {kanji} - {meanings[kanji] || "Loading..."}
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      <ul>
-        {constituants.map((kanji) => {
-          return (
-            <li key={kanji}>
-              {kanji} - {meanings[kanji] || "Loading..."}
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }
