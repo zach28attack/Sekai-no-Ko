@@ -1,7 +1,8 @@
 .kanji {
   color: #047e6e;
-  font-weight: 600;
+  font-weight: 500;
 }
 .kanji:hover {
+  font-weight: 600;
   text-decoration: underline;
 }
