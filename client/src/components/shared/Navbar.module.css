@@ -4,18 +4,8 @@
   top: 0;
   left: 0;
   display: flex;
-  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.05);
-  border-bottom: 2px rgb(217, 193, 115) solid;
-  background-color: #04a38e;
 }
-.container ol {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  width: 80%;
-  margin: 10px;
-}
+
 .logo {
   color: #f9ebb3;
   font-size: 2.5rem;
@@ -25,11 +15,9 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
-}
-.navItem {
-  font-size: 2rem;
-  color: #f9ebb3;
-}
-.activeNav {
-  border-bottom: 1px solid #f9ebb3;
+  margin: 1rem;
+  background-color: #04a38e;
+  z-index: 10;
+  position: fixed;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.05);
 }
