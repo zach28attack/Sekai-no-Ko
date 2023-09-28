@@ -25,8 +25,8 @@ function KanjiModal({kanji, setModalActive, mouseX, mouseY}) {
   };
 
   useEffect(() => {
-    getMeaningsOfConstituants();
     getTranslation();
+    getMeaningsOfConstituants();
   }, []);
 
   return (

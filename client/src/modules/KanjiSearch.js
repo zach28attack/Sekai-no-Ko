@@ -6,7 +6,6 @@ export default async function kanjiSearch(kanji) {
     });
     if (res.ok) {
       const data = await res.json();
-      console.log("kanji:", kanji, "meaning:", data.heisig_en);
       return data.heisig_en;
     } else return false;
   } catch (error) {
