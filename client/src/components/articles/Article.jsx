@@ -42,7 +42,7 @@ function Article({data}) {
     <div className={Class.container}>
       <header className={Class.title}>{title}</header>
       <div className={Class.content}>
-        <img src={data.urlToImage ? data.urlToImage : ""} alt="Article Picture" />
+        {data.urlToImage && <img src={data.urlToImage} alt="Article Picture" />}
         <div>
           <sub>{author}</sub>
           <p>{description}</p>
