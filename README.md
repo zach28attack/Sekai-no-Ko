@@ -1,11 +1,9 @@
-# Sekai no Ko - 世界の子
-
-(a work in progress)
+# Sekai no Ko - 世界の子 
 
 ## Description
 
-A webiste to help passionate people with a desire to learn Japanese practice their reading, writing, and listening skills.
+A webiste to help passionate Japanese language learners with their reading skills.
 
 ## Tech
 
-Will be built with React, Node, Express, and MongoDB
+Built with React, Node, and Express
