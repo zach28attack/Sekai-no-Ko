@@ -10,11 +10,7 @@ class Google {
     const target = "en";
     const text = this.text;
     let [translations] = await translate.translate(text, target);
-
     translations = Array.isArray(translations) ? translations : [translations];
-    translations.forEach((translation, i) => {
-      console.log(`${text} => (${target}) ${translation}`);
-    });
     return translations[0];
   }
 }
