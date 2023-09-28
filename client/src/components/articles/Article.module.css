@@ -5,7 +5,6 @@
   align-items: center;
   position: relative;
   border-bottom: 2px solid #04a38e;
-
   gap: 1rem;
   padding-bottom: 60px;
 }
@@ -17,6 +16,7 @@
   width: 95%;
   top: 0;
   margin-top: 24px;
+  z-index: 1;
 }
 .content img {
   max-width: 300px;
