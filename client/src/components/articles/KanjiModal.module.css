@@ -36,15 +36,9 @@
   color: #f9ebb3;
 }
 .header {
-  display: flex;
   border-bottom: #04a38e solid 1px;
-  padding: 0 10px;
+  padding: 0 24px;
 }
 .kanji {
   font-size: 2rem;
-}
-.hiragana {
-  font-size: 1.5rem;
-  align-self: center;
-  padding-left: 16px;
 }

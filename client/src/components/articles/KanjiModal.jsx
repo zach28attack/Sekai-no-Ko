@@ -34,7 +34,6 @@ function KanjiModal({kanji, setModalActive, mouseX, mouseY}) {
       <div className={Class.container} style={{left: mouseX, top: mouseY}}>
         <header className={Class.header}>
           <span className={Class.kanji}>{kanji}</span>
-          <span className={Class.hiragana}>ひらがな</span>
         </header>
         <div className={Class.content}>
           <div className={Class.translation}>- {translation || "loading..."}</div>
