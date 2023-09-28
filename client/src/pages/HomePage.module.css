@@ -1,4 +1,5 @@
-.container {
+.container,
+.articles {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -8,4 +9,8 @@
 
 .container button {
   font-size: 2rem;
+}
+
+.articles {
+  margin-top: 60px;
 }

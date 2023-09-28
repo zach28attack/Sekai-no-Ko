@@ -30,9 +30,11 @@ function HomePage() {
   return (
     <div className={Class.container} id="modalTarget">
       <Navbar />
-      {articles.map((data, index) => (
-        <Article key={index} data={data} />
-      ))}
+      <div className={Class.articles}>
+        {articles.map((data, index) => (
+          <Article key={index} data={data} />
+        ))}
+      </div>
     </div>
   );
 }
