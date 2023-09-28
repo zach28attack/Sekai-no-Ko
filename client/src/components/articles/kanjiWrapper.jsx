@@ -9,9 +9,13 @@ function kanjiWrapper(props) {
   const [mouseX, setMouseX] = useState();
   const [mouseY, setMouseY] = useState();
 
+  const modalWidth = 400;
+
   const kanjiClickHandler = (e) => {
+    if (e.clientX + modalWidth < window.innerWidth) setMouseX(e.clientX);
+    else setMouseX(e.clientX - (e.clientX + modalWidth - window.innerWidth + 10));
+
     setModalActive(!modalActive);
-    setMouseX(e.clientX);
     setMouseY(e.clientY);
   };
 
